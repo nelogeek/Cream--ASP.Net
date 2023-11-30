@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Cream.Models.GameRate>
+
+@{
+    ViewData["Title"] = "Game rates";
+}
+
+<h1>Game rates</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate.Author.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Game)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate.Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate.Text)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rate.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rate.Author.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Game.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rate.Rating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rate.Rating)
+                </td>
+                <td>
+                    <a asp-action="DeleteGameRate" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

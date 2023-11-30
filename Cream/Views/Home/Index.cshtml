@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">QQ, buddy!</h1>
+  
+</div>
+
+<div style="margin: auto">
+    <h2>Top games by reviews</h2>
+    <table class="table" width="300px" style="margin: auto">
+        <thead>
+            <tr>
+                <th>
+                    Game
+                </th>
+                <th>
+                    Rate
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.gameReviews)
+            {
+                <tr>
+                    <td>
+                        @item.Game
+                    </td>
+                    <td>
+                        @item.Rate
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div style="margin: auto">
+    <h2>Top games by solden copies</h2>
+    <table class="table" width="300px" style="margin: auto">
+        <thead>
+            <tr>
+                <th>
+                    Game
+                </th>
+                <th>
+                    Rate
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.gameCopies)
+            {
+                <tr>
+                    <td>
+                        @item.Game
+                    </td>
+                    <td>
+                        @item.Rate
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
